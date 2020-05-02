@@ -6,6 +6,12 @@ services:
       dockerfile: nginx.dockerfile
       target: ${ENVIRONMENT:-production-pseudo}
 
+  php-fpm:
+    build:
+      context: .
+      dockerfile: php-fpm.dockerfile
+      target: ${ENVIRONMENT:-production-pseudo}
+
   alb:
     build:
       context: docker/alb
