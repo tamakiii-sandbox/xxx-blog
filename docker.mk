@@ -1,5 +1,6 @@
 .PHONY: help install install-dev dependencies build clean
 
+# PROJECT_NAME := xxx-blog
 ENVIRONMENT := production-pseudo
 
 export DOCKER_BUILDKIT := 1
@@ -24,6 +25,7 @@ build:
 	docker-compose build
 
 .env:
+	# echo "PROJECT_NAME=$(PROJECT_NAME)" > $@
 	echo "ENVIRONMENT=$(ENVIRONMENT)" > $@
 	echo "ALB_PORT=$(ALB_PORT)" >> $@
 

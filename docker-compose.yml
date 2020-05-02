@@ -5,6 +5,9 @@ services:
       context: .
       dockerfile: nginx.dockerfile
       target: ${ENVIRONMENT:-production-pseudo}
+      # labels:
+      #   com.docker.compose.project: ${PROJECT_NAME}
+      #   com.docker.compose.service: nginx
     volumes:
       - .:/web/xxx-blog
 
@@ -13,6 +16,9 @@ services:
       context: .
       dockerfile: php-fpm.dockerfile
       target: ${ENVIRONMENT:-production-pseudo}
+      # labels:
+      #   com.docker.compose.project: ${PROJECT_NAME}
+      #   com.docker.compose.service: php-fpm
     volumes:
       - .:/web/xxx-blog
 
