@@ -1,4 +1,4 @@
-.PHONY: help install dependencies clean
+.PHONY: help install install-dev dependencies clean
 
 ENVIRONMENT := production-pseudo
 
@@ -8,6 +8,10 @@ help:
 install: \
 	dependencies \
 	.env
+
+install-dev: \
+	development \
+	install
 
 dependencies:
 	type docker > /dev/null
@@ -19,3 +23,7 @@ dependencies:
 
 clean:
 	rm -rf .env
+
+.PHONY: development
+development:
+	$(eval ENVIRONMENT := development)
