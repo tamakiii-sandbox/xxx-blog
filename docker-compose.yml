@@ -5,12 +5,16 @@ services:
       context: .
       dockerfile: nginx.dockerfile
       target: ${ENVIRONMENT:-production-pseudo}
+    volumes:
+      - .:/web/xxx-blog
 
   php-fpm:
     build:
       context: .
       dockerfile: php-fpm.dockerfile
       target: ${ENVIRONMENT:-production-pseudo}
+    volumes:
+      - .:/web/xxx-blog
 
   alb:
     build:
