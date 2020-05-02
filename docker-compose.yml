@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  alb:
+    build:
+      context: docker/alb
+      target: development
+    ports:
+      - ${ALB_PORT:-443}:443
