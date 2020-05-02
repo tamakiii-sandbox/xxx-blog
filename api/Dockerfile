@@ -18,8 +18,8 @@ RUN make -f /tmp/install.mk install
 
 COPY ./docker/php-fpm/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf
 
-COPY . /web/xxx-blog
-WORKDIR /web/xxx-blog
+COPY . /web/xxx-blog/api
+WORKDIR /web/xxx-blog/api
 
 # --
 

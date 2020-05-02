@@ -1,24 +1,16 @@
 version: "3.7"
 services:
-  nginx:
+  php-fpm:
     build:
       context: .
-      dockerfile: nginx.dockerfile
       target: ${ENVIRONMENT:-production-pseudo}
       # labels:
       #   com.docker.compose.project: ${PROJECT_NAME}
-      #   com.docker.compose.service: nginx
+      #   com.docker.compose.service: php-fpm
     networks:
       - default
     volumes:
-      - .:/web/xxx-blog
-
-  alb:
-    build:
-      context: docker/alb
-      target: development
-    ports:
-      - ${ALB_PORT:-443}:443
+      - .:/web/xxx-blog/api
 
 networks:
   default:
