@@ -1,6 +1,9 @@
-.PHONY: help install install-dev dependencies clean
+.PHONY: help install install-dev dependencies build clean
 
 ENVIRONMENT := production-pseudo
+
+export DOCKER_BUILDKIT := 1
+export COMPOSE_DOCKER_CLI_BUILD := 1
 
 help:
 	@cat $(firstword $(MAKEFILE_LIST))
@@ -16,6 +19,9 @@ install-dev: \
 dependencies:
 	type docker > /dev/null
 	type docker-compose > /dev/null
+
+build:
+	docker-compose build
 
 .env:
 	echo "ENVIRONMENT=$(ENVIRONMENT)" > $@
