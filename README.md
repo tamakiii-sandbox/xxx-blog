@@ -1,1 +1,1 @@
-# xxx-blog-media
+# xxx-blog

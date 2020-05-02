@@ -2,8 +2,8 @@ FROM php:7.4.5-fpm AS production-pseudo
 
 COPY ./docker/php-fpm/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf
 
-COPY . /web/xxx-blog-media
-WORKDIR /web/xxx-blog-media
+COPY . /web/xxx-blog
+WORKDIR /web/xxx-blog
 
 # --
 
