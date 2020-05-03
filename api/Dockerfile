@@ -2,9 +2,7 @@
 
 FROM php:7.4.5-fpm AS production-pseudo
 
-RUN --mount=type=cache,target=/var/cache/apt \
-    --mount=type=cache,target=/var/lib/apt \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       bash \
       make \
@@ -25,9 +23,7 @@ WORKDIR /web/xxx-blog/api
 
 FROM production-pseudo AS development
 
-RUN --mount=type=cache,target=/var/cache/apt \
-    --mount=type=cache,target=/var/lib/apt \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install -y --no-install-recommends \
       git \
       procps \
