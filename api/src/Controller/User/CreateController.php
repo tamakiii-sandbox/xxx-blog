@@ -19,14 +19,6 @@ class CreateController
         EntityManagerInterface $em,
         ValidatorInterface $validator
     ) {
-        if (!$request->isMethod(Request::METHOD_POST)) {
-            // TODO: Define custom Exception and translate message
-            throw new MethodNotAllowedHttpException(
-                [Request::METHOD_POST],
-                'Only POST method is allowed'
-            );
-        }
-
         $user = User::factory(
             $request->request->get('display_name') ?? ''
         );

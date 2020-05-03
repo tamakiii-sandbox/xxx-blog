@@ -5,7 +5,9 @@
 app_users:
   path: /users
   controller: App\Controller\UsersController::index
+  methods: GET|HEAD
 
 app_user_create:
   path: /user/create
   controller: App\Controller\User\CreateController::index
+  methods: POST
