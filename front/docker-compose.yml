@@ -6,6 +6,8 @@ services:
       target: ${ENVIRONMENT:-production-pseudo}
     networks:
       - default
+    ports:
+      - ${WEBPACK_PORT:-8080}:8080
     volumes:
       - .:/web/xxx-blog/front
 

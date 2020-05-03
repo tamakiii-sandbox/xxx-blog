@@ -13,14 +13,9 @@ RUN apt-get update && \
 COPY . /web/xxx-blog/front
 WORKDIR /web/xxx-blog/front
 
+COPY docker-entrypoint.sh /usr/local/sbin/
+ENTRYPOINT ["docker-entrypoint.sh"]
+
 # --
 
 FROM production-pseudo AS development
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-      git \
-      procps \
-      && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*

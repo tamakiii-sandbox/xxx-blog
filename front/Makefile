@@ -9,7 +9,7 @@ build:
 	npx --no-install webpack --mode production
 
 build-dev:
-	npx --no-install webpack-dev-server
+	npx --no-install webpack-dev-server --host 0.0.0.0 --disable-host-check
 
 check:
 	npx --no-install tsc -p . --noEmit

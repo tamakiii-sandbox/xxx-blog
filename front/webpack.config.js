@@ -20,6 +20,7 @@ module.exports = {
       },
     ],
   },
+  entry: path.join(__dirname, "src/index.tsx"),
   resolve: {
     extensions: [".js", ".ts", ".tsx", ".json", ".mjs", ".wasm"],
   },

@@ -1,6 +1,7 @@
 .PHONY: help install install-dev dependencies build clean
 
 ENVIRONMENT := production-pseudo
+WEBPACK_PORT := 8080
 
 export DOCKER_BUILDKIT := 1
 export COMPOSE_DOCKER_CLI_BUILD := 1
@@ -25,6 +26,7 @@ build:
 
 .env:
 	echo "ENVIRONMENT=$(ENVIRONMENT)" > $@
+	echo "WEBPACK_PORT=$(WEBPACK_PORT)" >> $@
 
 node_modules:
 ifeq ($(ENVIRONMENT),production-pseudo)
