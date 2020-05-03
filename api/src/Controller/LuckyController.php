@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 class LuckyController
@@ -9,8 +10,8 @@ class LuckyController
     {
         $number = random_int(0, 100);
 
-        return new Response(
-          '<html><body>Lucky number: ' . $number . '</body></html>'
-        );
+        return new JsonResponse([
+          'luckey_number' => $number,
+        ]);
     }
 }
