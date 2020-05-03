@@ -17,7 +17,22 @@ services:
     ports:
       - ${ALB_PORT:-443}:443
 
+  mysql:
+    build:
+      context: docker/mysql
+      target: development
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: xxx-blog
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql:/var/lib/mysql
+
 networks:
   default:
     name: xxx-blog_default
     driver: bridge
+
+volumes:
+  mysql:
