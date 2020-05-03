@@ -21,11 +21,19 @@
 
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
-		"terminal.integrated.shell.linux": null
+		"terminal.integrated.shell.linux": null,
+		"symfony-vscode.phpExecutablePath": "/usr/local/bin/php"
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": []
+	"extensions": [
+		"felixfbecker.php-intellisense",
+		"bmewburn.vscode-intelephense-client",
+		"felixfbecker.php-debug",
+		"mehedidracula.php-namespace-resolver",
+		"thenouillet.symfony-vscode",
+		"tmrdh.symfony-helper",
+	],
 
 	// Uncomment the next line if you want start specific services in your Docker Compose config.
 	// "runServices": [],
