@@ -7,6 +7,11 @@ app_users:
   controller: App\Controller\UsersController::index
   methods: GET|HEAD
 
+app_user_get:
+  path: /user/{id}
+  controller: App\Controller\User\GetController::index
+  methods: GET|HEAD
+
 app_user_create:
   path: /user/create
   controller: App\Controller\User\CreateController::index
