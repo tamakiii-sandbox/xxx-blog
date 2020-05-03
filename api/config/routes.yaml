@@ -5,3 +5,7 @@
 app_users:
   path: /users
   controller: App\Controller\UsersController::index
+
+app_user_create:
+  path: /user/create
+  controller: App\Controller\User\CreateController::index
