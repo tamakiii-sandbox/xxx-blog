@@ -12,6 +12,11 @@ app_user_get:
   controller: App\Controller\User\GetController::index
   methods: GET|HEAD
 
+app_user_update:
+  path: /user/{id}/update
+  controller: App\Controller\User\UpdateController::index
+  methods: PUT
+
 app_user_create:
   path: /user/create
   controller: App\Controller\User\CreateController::index
