@@ -10,16 +10,13 @@ help:
 
 install: \
 	dependencies \
-	.env \
-	node_modules
+	.env
 
 install-dev: \
 	development \
 	install
 
 dependencies:
-	type npm > /dev/null
-	type node > /dev/null
 	type docker > /dev/null
 	type docker-compose > /dev/null
 
@@ -37,7 +34,7 @@ else
 endif
 
 clean:
-	rm -rf node_modules
+	rm -rf .env
 
 .PHONY: development
 development:
