@@ -14,6 +14,9 @@ RUN apt-get update && \
 COPY ./docker/php-fpm/install.mk /tmp/install.mk
 RUN make -f /tmp/install.mk install
 
+RUN docker-php-ext-install \
+      pdo_mysql
+
 COPY ./docker/php-fpm/conf.d/production.ini /usr/local/etc/php/conf.d/php.ini
 COPY ./docker/php-fpm/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf
 
