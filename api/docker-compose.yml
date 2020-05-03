@@ -4,9 +4,6 @@ services:
     build:
       context: .
       target: ${ENVIRONMENT:-production-pseudo}
-      # labels:
-      #   com.docker.compose.project: ${PROJECT_NAME}
-      #   com.docker.compose.service: php-fpm
     networks:
       - default
     volumes:
