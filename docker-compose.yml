@@ -5,9 +5,6 @@ services:
       context: .
       dockerfile: nginx.dockerfile
       target: ${ENVIRONMENT:-production-pseudo}
-      # labels:
-      #   com.docker.compose.project: ${PROJECT_NAME}
-      #   com.docker.compose.service: nginx
     networks:
       - default
     volumes:
