@@ -25,7 +25,6 @@ build:
 
 .env:
 	echo "ENVIRONMENT=$(ENVIRONMENT)" >> $@
-	echo "ALB_PORT=$(ALB_PORT)" >> $@
 	echo "###> symfony/framework-bundle ###" >> $@
 	echo "APP_ENV=dev" >> $@
 	echo "APP_SECRET=bde2186c0696b2f282982662f4253ebd" >> $@
