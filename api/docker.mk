@@ -28,6 +28,7 @@ build:
 	echo "###> symfony/framework-bundle ###" >> $@
 	echo "APP_ENV=dev" >> $@
 	echo "APP_SECRET=bde2186c0696b2f282982662f4253ebd" >> $@
+	echo "DATABASE_URL=mysql://username:password@mysql:3306/xxx_blog" >> $@
 	echo "#TRUSTED_PROXIES=127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16" >> $@
 	echo "#TRUSTED_HOSTS='^(localhost|example\.com)$'" >> $@
 	echo "###> symfony/framework-bundle ###" >> $@
