@@ -17,6 +17,11 @@ app_user_update:
   controller: App\Controller\User\UpdateController::index
   methods: PUT
 
+app_user_delete:
+  path: /user/{id}/delete
+  controller: App\Controller\User\DeleteController::index
+  methods: DELETE
+
 app_user_create:
   path: /user/create
   controller: App\Controller\User\CreateController::index
