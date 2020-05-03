@@ -5,12 +5,10 @@ services:
       context: .
       dockerfile: nginx.dockerfile
       target: ${ENVIRONMENT:-production-pseudo}
-
-  php-fpm:
-    build:
-      context: .
-      dockerfile: php-fpm.dockerfile
-      target: ${ENVIRONMENT:-production-pseudo}
+    networks:
+      - default
+    volumes:
+      - .:/web/xxx-blog
 
   alb:
     build:
@@ -18,3 +16,23 @@ services:
       target: development
     ports:
       - ${ALB_PORT:-443}:443
+
+  mysql:
+    build:
+      context: docker/mysql
+      target: development
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: xxx_blog
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql:/var/lib/mysql
+
+networks:
+  default:
+    name: xxx-blog_default
+    driver: bridge
+
+volumes:
+  mysql:
