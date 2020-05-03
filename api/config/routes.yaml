@@ -26,3 +26,8 @@ app_user_create:
   path: /user/create
   controller: App\Controller\User\CreateController::index
   methods: POST
+
+app_user_options:
+  path: /users
+  controller: App\Controller\User\OptionsController::index
+  methods: OPTIONS
