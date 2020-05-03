@@ -13,9 +13,10 @@ export default function App() {
       console.log(url.toString());
       const response = await fetch(url.toString(), {
         method: "GET",
+        mode: "cors",
         credentials: "same-origin",
         headers: {
-          "X-REQUESTED-WITH": "XMLHttpRequest",
+          "X-Requested-With": "XMLHttpRequest",
           "Accept": "application/json",
           "Content-Type": "application/json",
         }
