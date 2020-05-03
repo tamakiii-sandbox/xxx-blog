@@ -26,6 +26,10 @@ build:
 .env:
 	echo "ENVIRONMENT=$(ENVIRONMENT)" > $@
 	echo "ALB_PORT=$(ALB_PORT)" >> $@
+	echo "TZ=Asia/Tokyo" >> $@
+	echo "LANG=ja_JP.UTF-8" >> $@
+	echo "LANGUAGE=ja_JP:ja" >> $@
+	echo "LC_ALL=ja_JP.UTF-8" >> $@
 
 clean:
 	rm -rf .env
