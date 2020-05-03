@@ -29,6 +29,7 @@ build:
 	echo "LANG=ja_JP.UTF-8" >> $@
 	echo "LANGUAGE=ja_JP:ja" >> $@
 	echo "LC_ALL=ja_JP.UTF-8" >> $@
+	echo "" >> $@
 	echo "###> symfony/framework-bundle ###" >> $@
 	echo "APP_ENV=dev" >> $@
 	echo "APP_SECRET=bde2186c0696b2f282982662f4253ebd" >> $@
@@ -36,6 +37,10 @@ build:
 	echo "#TRUSTED_PROXIES=127.0.0.0/8,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16" >> $@
 	echo "#TRUSTED_HOSTS='^(localhost|example\.com)$'" >> $@
 	echo "###> symfony/framework-bundle ###" >> $@
+	echo "" >> $@
+	echo "###> nelmio/cors-bundle ###" >> $@
+	echo "CORS_ALLOW_ORIGIN=^https?://(localhost|127\.0\.0\.1)(:[0-9]+)?$" >> $@
+	echo "###< nelmio/cors-bundle ###" >> $@
 
 clean:
 	rm -rf .env
