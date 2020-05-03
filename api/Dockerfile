@@ -14,6 +14,7 @@ RUN apt-get update && \
 COPY ./docker/php-fpm/install.mk /tmp/install.mk
 RUN make -f /tmp/install.mk install
 
+COPY ./docker/php-fpm/conf.d/production.ini /usr/local/etc/php/conf.d/php.ini
 COPY ./docker/php-fpm/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 COPY . /web/xxx-blog/api
@@ -30,3 +31,5 @@ RUN apt-get update && \
       && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+COPY ./docker/php-fpm/conf.d/development.ini /usr/local/etc/php/conf.d/php.ini
