@@ -25,6 +25,10 @@ build:
 
 .env:
 	echo "ENVIRONMENT=$(ENVIRONMENT)" >> $@
+	echo "TZ=Asia/Tokyo" >> $@
+	echo "LANG=ja_JP.UTF-8" >> $@
+	echo "LANGUAGE=ja_JP:ja" >> $@
+	echo "LC_ALL=ja_JP.UTF-8" >> $@
 	echo "###> symfony/framework-bundle ###" >> $@
 	echo "APP_ENV=dev" >> $@
 	echo "APP_SECRET=bde2186c0696b2f282982662f4253ebd" >> $@
