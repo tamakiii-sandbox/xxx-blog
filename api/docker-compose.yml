@@ -1,0 +1,15 @@
+version: "3.7"
+services:
+  php-fpm:
+    build:
+      context: .
+      target: ${ENVIRONMENT:-production-pseudo}
+    networks:
+      - default
+    volumes:
+      - .:/web/xxx-blog/api
+
+networks:
+  default:
+    name: xxx-blog_default
+    driver: bridge

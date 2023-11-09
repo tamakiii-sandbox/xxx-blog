@@ -1,0 +1,33 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+app_users:
+  path: /users
+  controller: App\Controller\UsersController::index
+  methods: GET|HEAD
+
+app_user_get:
+  path: /user/{id}
+  controller: App\Controller\User\GetController::index
+  methods: GET|HEAD
+
+app_user_update:
+  path: /user/{id}/update
+  controller: App\Controller\User\UpdateController::index
+  methods: PUT
+
+app_user_delete:
+  path: /user/{id}/delete
+  controller: App\Controller\User\DeleteController::index
+  methods: DELETE
+
+app_user_create:
+  path: /user/create
+  controller: App\Controller\User\CreateController::index
+  methods: POST
+
+app_user_options:
+  path: /users
+  controller: App\Controller\User\OptionsController::index
+  methods: OPTIONS
